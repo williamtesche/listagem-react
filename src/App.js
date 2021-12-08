@@ -8,8 +8,9 @@ function App() {
   return (
     <div>
       <h1>To Do List</h1>
-      <input value={novoItem} onChange={value => setNovoItem(value.target.value)} type="text" />
+      <input value={novoItem} onChange={value => setNovoItem(value.target.value)}/>
       <button onClick={() => adicionarNovoItem()}>Adicionar</button>
+      <div className="div2">
       <ul>
         {lista.map((item,index) => (
           <li>
@@ -21,6 +22,8 @@ function App() {
           </li>
         ))}
       </ul>
+      </div>
+     
     </div>
 
 
@@ -28,8 +31,11 @@ function App() {
 
   );
   function adicionarNovoItem() {
+    if(!novoItem){alert("Escreva uma tarefa Burro :)")}
+    else{
     setLista([...lista,novoItem])
     setNovoItem("");
+    }
   }
 
   function deletarItem(index) {
