@@ -31,7 +31,7 @@ function App() {
 
   );
   function adicionarNovoItem() {
-    if(!novoItem){alert("Escreva uma tarefa Burro :)")}
+    if(!novoItem){alert("Você não digitou uma tarefa!)")}
     else{
     setLista([...lista,novoItem])
     setNovoItem("");
